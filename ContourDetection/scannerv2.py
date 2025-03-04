@@ -131,22 +131,22 @@ for line in result:
     for word_info in line:
         print(word_info[1][0])
 
-# Define the output directory where the OCR result will be saved
+
 output_text_dir = r"D:\Contour-Detection-OCR\ContourDetection\ocr_saved_text"
 
-# Ensure the directory exists
+
 os.makedirs(output_text_dir, exist_ok=True)
 
-# Define the full path of the output text file
+
 output_text_path = os.path.join(output_text_dir, f"{img_var}_ocr_result.txt")
 
-# Open the file in write mode and properly format the output
+
 with open(output_text_path, "w", encoding="utf-8") as f:
-    for line in result:  # Iterate over detected lines
-        if isinstance(line, list):  # Ensure it's a valid line
-            words_in_line = [word_info[1][0] for word_info in line]  # Extract words
-            line_text = " ".join(words_in_line)  # Join words to preserve spacing
-            f.write(line_text.strip() + "\n")  # Write each line separately with a newline
+    for line in result:
+        if isinstance(line, list):
+            words_in_line = [word_info[1][0] for word_info in line]
+            line_text = " ".join(words_in_line)
+            f.write(line_text.strip() + "\n")
 
 print(f"OCR result saved to: {output_text_path}")
 
