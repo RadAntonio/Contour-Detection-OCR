@@ -25,7 +25,7 @@ def preprocess_receipt(image):
 
 output_dir = './saved_images'
 
-img_var = 'test60'
+img_var = 'test70' #32 mici probleme, 60 ok
 #thresh_val = 80
 
 image1 = cv2.imread(rf'./images/{img_var}.jpg')
